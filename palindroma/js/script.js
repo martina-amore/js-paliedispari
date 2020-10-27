@@ -42,6 +42,7 @@
 var parola = prompt("Inserisci una parola");
 
 // CREO UNA FUNZIONE PER CAPIRE SE LA PAROLA E' PALINDROMA
+var risultato;
 function palindroma(word) {
     // DEFINISCO LA VARIABILE REVERSE COME VUOTA
     var reverseParola = "";
