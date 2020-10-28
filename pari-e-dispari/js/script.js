@@ -35,11 +35,11 @@ function numeroRandom(min, max) {
 var somma = numeroUtente + numeroRandom(1, 5);
 document.getElementById("totale").innerHTML = "La somma del numero che hai scelto e del numero generato dal computer è " + somma;
 
-// FUNZIONE PER STABILIRE SE LA SOMMA E' PARI O DISPARI
-var sumIsEven;
-function pariODispari(val1) {
+function pariODispari(num) {
+    // FUNZIONE PER STABILIRE SE LA SOMMA E' PARI O DISPARI
     // SE LA SOMMA E' PARI, IL VALORE E' VERO, ALTRIMENTI FALSO
-    if (val1 % 2 == 0) {
+    var sumIsEven;
+    if (num % 2 == 0) {
         sumIsEven = true;
     }
     else {
@@ -48,19 +48,16 @@ function pariODispari(val1) {
     return sumIsEven;
 }
 
-// RICHIAMO LA FUNZIONE DELLA SOMMA PARI O DISPARI
-pariODispari(somma);
-
 // SE L'UTENTE HA SCELTO PARI E LA SOMMA E' PARI, STAMPO CHE L'UTENTE HA VINTO
-if (podIsEven == true && sumIsEven == true) {
+if (podIsEven == true && pariODispari(somma) == true) {
     document.getElementById("finale-pod").innerHTML = "Hai scelto pari e la somma è pari, quindi hai vinto!";
 }
 // SE L'UTENTE HA SCELTO DISPARI E LA SOMMA E' PARI, STAMPO CHE IL COMPUTER HA VINTO
-else if (podIsEven == false && sumIsEven == true) {
+else if (podIsEven == false && pariODispari(somma) == true) {
     document.getElementById("finale-pod").innerHTML = "Hai scelto dispari e la somma è pari, quindi ha vinto il computer";
 }
 // SE L'UTENTE HA SCELTO PARI E LA SOMMA E' DISPARI, STAMPO CHE IL COMPUTER HA VINTO
-else if (podIsEven == true && sumIsEven == false) {
+else if (podIsEven == true && pariODispari(somma) == false) {
     document.getElementById("finale-pod").innerHTML = "Hai scelto pari e la somma è dispari, quindi ha vinto il computer";
 }
 // SE L'UTENTE HA SCELTO DISPARI E LA SOMMA E' DISPARI, STAMPO CHE L'UTENTE HA VINTO

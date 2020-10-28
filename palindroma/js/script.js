@@ -42,9 +42,8 @@
 var parola = prompt("Inserisci una parola");
 
 // CREO UNA FUNZIONE PER CAPIRE SE LA PAROLA E' PALINDROMA
-var risultato;
 function palindroma(word) {
-    // DEFINISCO LA VARIABILE REVERSE COME VUOTA
+    // DEFINISCO LE VARIABILI
     var reverseParola = "";
     // INSTAURO UN CICLO FOR CHE VA AVANTI FINO A QUANDO NON ESAURISCO I CARATTERI DELLA PAROLA
     for (var i = word.length - 1; i >= 0; i--){
@@ -54,20 +53,17 @@ function palindroma(word) {
     // E' UGUALE ALLA PAROLA FORMATA DAI CARATTERI AL CONTRARIO, QUINDI SE E'
     // PALINDROMA, LA CONDIZIONE RISULTA VERA, ALTRIMENTI FALSA
     if (word == reverseParola) {
-        risultato = true;
+        isPalindroma = true;
     }
     else {
-        risultato = false;
+        isPalindroma = false;
     }
-    return risultato;
+    return isPalindroma;
 }
-
-// RICHIAMO LA FUNZIONE
-palindroma(parola);
 
 // STABILISCO LA CONDIZIONE PER CUI, SE LA PAROLA E' PALINDROMA,
 // STAMPO CHE LO E', ALTRIMENTI CHE NON LO E'
-if (risultato == true) {
+if (palindroma(parola)) {
     document.getElementById("risultato").innerHTML = parola + " è una parola palindroma";
 }
 
